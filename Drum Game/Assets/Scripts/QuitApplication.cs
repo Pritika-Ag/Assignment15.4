@@ -6,6 +6,13 @@ public class QuitApplication : MonoBehaviour
 {
     public void button_exit()
     {
+        /*if (UnityEditor.EditorApplication.isPlaying)
+        {
+            UnityEditor.EditorApplication.isPlaying = false;
+        } else
+        {
+            Application.Quit();
+        }*/
         Debug.Log("QUIT");
         Application.Quit();
     }
