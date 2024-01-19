@@ -7,38 +7,20 @@ using TMPro;
 public class KeyboardInput : MonoBehaviour
 {
     [SerializeField] private TMP_Text _played;
+    [SerializeField] private AudioClip snareClip;
+    [SerializeField] private AudioClip crashClip;
+    [SerializeField] private AudioClip bassClip;
+    [SerializeField] private AudioClip HiHatClosedClip;
+    [SerializeField] private float volume = 1f;
+    private AudioSource source;
 
-    // Start is called before the first frame update
-    void Start()
+    private void Start()
     {
-        
-    }
-
-    // Update is called once per frame
-    // Update is called once per frame
-    void FixedUpdate()
-    {
-        ProcessKeyboardInput();
-    }
-
-    public void ProcessKeyboardInput()
-    {
-        /*if (Input.GetKey(KeyCode.UpArrow) || Input.GetKey(KeyCode.W))
+        source = gameObject.GetComponent<AudioSource>();
+        if(source == null)
         {
-            PlayCrash();
+            source = gameObject.AddComponent<AudioSource>();
         }
-        else if (Input.GetKey(KeyCode.LeftArrow) || Input.GetKey(KeyCode.A))
-        {
-            PlayHiHat();
-        }
-        else if (Input.GetKey(KeyCode.RightArrow) || Input.GetKey(KeyCode.D))
-        {
-            PlayBass();
-        }
-        else if (Input.GetKey(KeyCode.DownArrow) || Input.GetKey(KeyCode.S))
-        {
-            PlaySnare();
-        }*/
     }
 
     public void PlayCrash(InputAction.CallbackContext context)
@@ -47,6 +29,7 @@ public class KeyboardInput : MonoBehaviour
         {
             _played.text = _played.text + " Crash";
             Debug.Log("Crash ");
+            source.PlayOneShot(crashClip, volume);
         }
     }
 
@@ -56,6 +39,7 @@ public class KeyboardInput : MonoBehaviour
         {
             _played.text = _played.text + " Hi-hat";
             Debug.Log("Hi-Hat");
+            source.PlayOneShot(HiHatClosedClip, volume);
         }
     }
 
@@ -65,6 +49,7 @@ public class KeyboardInput : MonoBehaviour
         {
             _played.text = _played.text + " Snare";
             Debug.Log("Snare");
+            source.PlayOneShot(snareClip, volume*2);
         }
     }
 
@@ -74,6 +59,7 @@ public class KeyboardInput : MonoBehaviour
         {
             _played.text = _played.text + " Bass";
             Debug.Log("Bass");
+            source.PlayOneShot(bassClip, volume*2);
         }
     }
 }

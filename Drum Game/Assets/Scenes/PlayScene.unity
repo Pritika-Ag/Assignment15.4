@@ -2294,6 +2294,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _played: {fileID: 1231785196}
+  snareClip: {fileID: 8300000, guid: fbf44a88cbedd42549321d3423c25028, type: 3}
+  crashClip: {fileID: 8300000, guid: 3e4a1077fa1fb4b6e9fd3ecbab9287b4, type: 3}
+  bassClip: {fileID: 8300000, guid: 77b5c98e62e1645b390fe8bc6087cc78, type: 3}
+  HiHatClosedClip: {fileID: 8300000, guid: 536924b06cdaf4163b73e5eaeda0e5b6, type: 3}
+  volume: 1
 --- !u!1 &1338079995
 GameObject:
   m_ObjectHideFlags: 0
@@ -3273,7 +3278,7 @@ GameObject:
   - component: {fileID: 1981114506}
   - component: {fileID: 1981114505}
   - component: {fileID: 1981114508}
-  - component: {fileID: 1981114510}
+  - component: {fileID: 1981114509}
   m_Layer: 5
   m_Name: GameText
   m_TagString: Untagged
@@ -3424,7 +3429,7 @@ MonoBehaviour:
   m_ActionEvents:
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1981114510}
+      - m_Target: {fileID: 1981114509}
         m_TargetAssemblyTypeName: KeyboardInput, Assembly-CSharp
         m_MethodName: PlayHiHat
         m_Mode: 0
@@ -3440,7 +3445,7 @@ MonoBehaviour:
     m_ActionName: PlayDrums/PlayHihat[/Keyboard/leftArrow,/Keyboard/a]
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1981114510}
+      - m_Target: {fileID: 1981114509}
         m_TargetAssemblyTypeName: KeyboardInput, Assembly-CSharp
         m_MethodName: PlayCrash
         m_Mode: 0
@@ -3456,7 +3461,7 @@ MonoBehaviour:
     m_ActionName: PlayDrums/PlayCrash[/Keyboard/w,/Keyboard/upArrow]
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1981114510}
+      - m_Target: {fileID: 1981114509}
         m_TargetAssemblyTypeName: KeyboardInput, Assembly-CSharp
         m_MethodName: PlayBass
         m_Mode: 0
@@ -3472,7 +3477,7 @@ MonoBehaviour:
     m_ActionName: PlayDrums/PlayBass[/Keyboard/s,/Keyboard/downArrow]
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1981114510}
+      - m_Target: {fileID: 1981114509}
         m_TargetAssemblyTypeName: KeyboardInput, Assembly-CSharp
         m_MethodName: PlaySnare
         m_Mode: 0
@@ -3491,7 +3496,7 @@ MonoBehaviour:
   m_DefaultActionMap: PlayDrums
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
---- !u!114 &1981114510
+--- !u!114 &1981114509
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -3504,6 +3509,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _played: {fileID: 1231785196}
+  snareClip: {fileID: 8300000, guid: fbf44a88cbedd42549321d3423c25028, type: 3}
+  crashClip: {fileID: 8300000, guid: 3e4a1077fa1fb4b6e9fd3ecbab9287b4, type: 3}
+  bassClip: {fileID: 8300000, guid: 77b5c98e62e1645b390fe8bc6087cc78, type: 3}
+  HiHatClosedClip: {fileID: 8300000, guid: 536924b06cdaf4163b73e5eaeda0e5b6, type: 3}
+  volume: 1
 --- !u!1 &1997865160
 GameObject:
   m_ObjectHideFlags: 0

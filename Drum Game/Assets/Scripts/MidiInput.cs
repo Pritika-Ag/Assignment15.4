@@ -15,10 +15,21 @@ public class MidiInput : MonoBehaviour
 {
     private static IInputDevice _inputDevice;
     [SerializeField] private TMP_Text _played;
+    [SerializeField] private AudioClip snareClip;
+    [SerializeField] private AudioClip crashClip;
+    [SerializeField] private AudioClip bassClip;
+    [SerializeField] private AudioClip HiHatClosedClip;
+    [SerializeField] private float volume = 1f;
+    private AudioSource source;
 
     private void Start()
     {
         InitializeInputDevice();
+        source = gameObject.GetComponent<AudioSource>();
+        if (source == null)
+        {
+            source = gameObject.AddComponent<AudioSource>();
+        }
     }
 
     private void OnApplicationQuit()
@@ -67,16 +78,28 @@ public class MidiInput : MonoBehaviour
         string instrumentCode = getBetween(e, "(", ",");
         if (instrumentCode != null && e.Contains("Note On"))
         {
-            switch(instrumentCode)
+            switch (instrumentCode)
             {
                 case "46":
-                    return "Hi-Hat";
+                    {
+                        source.PlayOneShot(HiHatClosedClip, volume);
+                        return "Hi-Hat";
+                    }
                 case "49":
-                    return "Crash";
+                    {
+                        source.PlayOneShot(crashClip, volume);
+                        return "Crash";
+                    }
                 case "38":
-                    return "Snare";
+                    {
+                        source.PlayOneShot(snareClip, volume * 2);
+                        return "Snare";
+                    }
                 case "36":
-                    return "Bass";
+                    {
+                        source.PlayOneShot(bassClip, volume * 2);
+                        return "Bass";
+                    }
                 default:
                     return "Other";
 
