@@ -11,7 +11,7 @@ public class KeyboardInput : MonoBehaviour
     [SerializeField] private AudioClip crashClip;
     [SerializeField] private AudioClip bassClip;
     [SerializeField] private AudioClip HiHatClosedClip;
-    [SerializeField] private float volume = 1f;
+    [SerializeField] private float volume = 2f;
     private AudioSource source;
 
     private void Start()
